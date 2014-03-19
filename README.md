@@ -1,4 +1,4 @@
-tomcat-nginx-docker
+Docker - Tomcat - Nginx
 ===================
 
-A Docker build that has Tomcat 7 proxied by Nginx
+This project is a Docker container that runs Tomcat (on port 8080, not exposed) and nginx (on port 80, exposed). Put the war in `/var/lib/tomcat7/webapps/` with the name `ROOT.war`. It will get exploded and served at startup.
