@@ -1,12 +1,10 @@
 FROM ubuntu
 
 RUN apt-get -y update
-RUN apt-get install -y openjdk-7-jre-headless
-RUN apt-get install -y tomcat7
-RUN apt-get install -y nginx
-RUN apt-get install -y git
+RUN apt-get install -y openjdk-7-jre-headless tomcat7 nginx
 
 ADD nginx.conf /etc/nginx/nginx.conf
+ADD tomcat7.defaults /etc/default/tomcat7
 EXPOSE 80
 
-ENTRYPOINT service tomcat7 start && service nginx start && tail -f /var/lib/tomcat7/logs/catalina.out
+#ENTRYPOINT service tomcat7 start && service nginx start && tail -f /var/lib/tomcat7/logs/catalina.out
